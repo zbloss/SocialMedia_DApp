@@ -1,4 +1,5 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.5.16;
+
 
 contract Scmdapp {
     
@@ -29,7 +30,7 @@ contract Scmdapp {
         bytes32[] myImages;
     }
 
-    function registerNewUser(string handle, bytes32 city, bytes32 state, bytes32 country) public returns (bool success) {
+    function registerNewUser(string memory handle, bytes32 city, bytes32 state, bytes32  country) public returns (bool success) {
 
         address thisNewAddress = msg.sender;
 
@@ -49,7 +50,7 @@ contract Scmdapp {
         }
     }
 
-    function addImageToUser(string imageURL, bytes32 SHA256notaryHash) public returns (bool success) {
+    function addImageToUser(string memory imageURL, bytes32 SHA256notaryHash) public returns (bool success) {
 
         address thisNewAddress = msg.sender;
 
@@ -85,11 +86,11 @@ contract Scmdapp {
         }
     }
 
-    function getUsers() public view returns ( address[] ) {
+    function getUsers() public view returns ( address[] memory ) {
         return usersByAddress;
     }
 
-    function getUser(address userAddress) public view returns (string, bytes32, bytes32, bytes32, bytes32[]) {
+    function getUser(address userAddress) public view returns (string memory, bytes32, bytes32, bytes32, bytes32[] memory) {
             
         return (
             Users[userAddress].handle, 
@@ -100,15 +101,15 @@ contract Scmdapp {
         );
     }
 
-    function getAllImages() public view returns (bytes32[]) {
+    function getAllImages() public view returns (bytes32[] memory) {
         return imagesByNotaryHash;
     }
 
-    function getUserImages(address userAddress) public view returns (bytes32[]) {
+    function getUserImages(address userAddress) public view returns (bytes32[] memory) {
         return Users[userAddress].myImages;
     }
 
-    function getImage(bytes32 SHA256notaryHash) public view returns (string, uint) {
+    function getImage(bytes32 SHA256notaryHash) public view returns (string memory, uint) {
         return (notarizedImages[SHA256notaryHash].imageURL, notarizedImages[SHA256notaryHash].timeStamp);
     }
 

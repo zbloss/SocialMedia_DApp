@@ -1,0 +1,19 @@
+{
+  "name": "social_media_dapp",
+  "version": "1.0.0",
+  "description": "Basic social media app running on the Ethereum Blockchain",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ludacris-Plaid/SocialMedia_DApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ludacris-Plaid/SocialMedia_DApp/issues"
+  },
+  "homepage": "https://github.com/Ludacris-Plaid/SocialMedia_DApp#readme"
+}
